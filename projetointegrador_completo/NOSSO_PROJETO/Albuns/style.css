@@ -1,0 +1,253 @@
+/* Estilos Gerais */
+body {
+    background: linear-gradient(135deg, rgb(56, 50, 65), rgb(80, 0, 70));
+    color: #ecf0f1;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Estilos do Container Principal */
+.music-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos do Container de Upload */
+.upload-section {
+    text-align: center;
+    background-color: #080a0a;
+    border-radius: 15px;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos do Título */
+.upload-section h2 {
+    color: #ecf0f1;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 0 0 10px #8e44ad, 0 0 15px #8e44ad;
+}
+
+/* Estilos do Botão "Selecionar" */
+.upload-section #upload-button {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, rgb(56, 50, 65), rgb(80, 0, 70));
+    color: #ecf0f1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.1em;
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.upload-section #upload-button:hover {
+    background: linear-gradient(135deg, rgb(66, 60, 75), rgb(90, 10, 80));
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.5);
+    transform: scale(1.03);
+}
+
+.upload-section #upload-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos das Opções de Upload */
+.upload-options {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.upload-options button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgb(56, 50, 65), rgb(80, 0, 70));
+    color: #ecf0f1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.upload-options button:hover {
+    background: linear-gradient(135deg, rgb(66, 60, 75), rgb(90, 10, 80));
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.5);
+    transform: scale(1.03);
+}
+
+.upload-options button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos do Botão de Voltar */
+.back-button-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+}
+
+.back-button {
+    font-size: 1.2em;
+    color: #ecf0f1;
+    text-decoration: none;
+    background-color: #8e44ad;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #9b59b6;
+    transform: scale(1.05);
+}
+
+/* Estilos para "Nenhum Álbum Selecionado" */
+.no-album-selected {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ecf0f1;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+/* Lista lateral de músicas */
+.songs-preview {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #1e1e2f;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    display: none;
+    color: #fff;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+.songs-preview h3 {
+    margin-top: 0;
+    font-size: 1.3em;
+    border-bottom: 1px solid #8e44ad;
+    padding-bottom: 0.5rem;
+}
+
+#songs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#songs-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #2c2c3c;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+#songs-list li:hover {
+    background: #3a3a4d;
+    transform: scale(1.01);
+}
+
+#songs-list img {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid #8e44ad70;
+}
+
+/* Scrollbar personalizada */
+.songs-preview::-webkit-scrollbar {
+    width: 8px;
+}
+
+.songs-preview::-webkit-scrollbar-thumb {
+    background-color: #8e44ad;
+    border-radius: 4px;
+}
+
+.songs-preview::-webkit-scrollbar-track {
+    background-color: #2c2c3c;
+}
+
+/* Botão de ir para o player */
+#go-to-player {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgb(56, 50, 65), rgb(80, 0, 70));
+    color: #ecf0f1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: 0.3s ease;
+    margin-top: 1rem;
+}
+
+#go-to-player:hover {
+    background: linear-gradient(135deg, rgb(66, 60, 75), rgb(90, 10, 80));
+    transform: scale(1.03);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .upload-section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .upload-section h2 {
+        font-size: 2em;
+    }
+
+    .upload-options {
+        flex-direction: column;
+    }
+
+    .upload-options button {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .back-button-container {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 16px;
+    }
+}

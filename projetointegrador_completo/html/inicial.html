@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jukebox Music - A free jukebox controlled by your profile.">
+    <title>Jukebox Music</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/inicial.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav role="navigation">
+            <div class="logo">
+                <strong>JUKEBOX<span class="highlight"> MUSIC</span></strong>
+            </div>
+            <div class="nav-links">
+                <a href="#sobre" aria-label="Navegar para a seção Sobre o Jukebox Music">Sobre</a>
+                <a href="../html/ajuda.html" aria-label="Navegar para a página de Ajuda com o Jukebox">Ajuda com o Jukebox</a>
+            </div>
+            <div class="accessibility-buttons-group">
+                <button id="readPageContent" class="accessibility-button" aria-label="Ouvir todo o conteúdo principal da página">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <button id="stopReadingButton" class="accessibility-button" aria-label="Parar leitura atual">
+                    <i class="fas fa-stop"></i>
+                </button>
+                <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Alternar modo escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            </nav>
+    </header>
+
+    <main role="main">
+        <section class="hero">
+            <div id="conexao"></div>
+            <h1>Jukebox Gratuito</h1>
+            <p>A única jukebox gratuita que qualquer pessoa pode controlar a partir do seu perfil.</p>
+            <a href="../NOSSO_PROJETO/Player/index.html" class="button" role="button" aria-label="Ir para o Jukebox Music Player">Ir para o Jukebox Music Player</a>
+        </section>
+
+        <section id="sobre" class="container">
+            <h2>Sobre a Jukebox Music</h2>
+            <article class="section left">
+                <div class="carousel">
+                    <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/carrosel1/ft2.png" alt="Foto da Jukebox Music em evento">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/carrosel1/imagem1.webp" alt="Interface do Jukebox Music Player">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev" aria-label="Slide anterior do carrossel 'Projeto Integrador'">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next" aria-label="Próximo slide do carrossel 'Projeto Integrador'">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Próximo</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="text">
+                    <h3>Projeto Integrador hardware e software</h3>
+                    <p>Projeto destinado a avaliar a conhecimento adquirido em sala nas matérias de hardware e software, objetivo criar um projeto integrado utilizando peças de computadores sem que seja um computador desktop.</p>
+                    <p>Sala foi dividida em grupos onde o grupo decidiu criar um Jukebox utilizando hardware e software com infra estrutura de mateira reutilizada e sistema de áudio de um caixa de carro.</p>
+                    <button class="read-section-button" aria-label="Ouvir descrição do Projeto Integrador hardware e software"><i class="fas fa-volume-up"></i> Ler Seção</button>
+                </div>
+            </article>
+
+            <article class="section left">
+                <div class="text">
+                    <h3>Coletando material reciclado</h3>
+                    <p>Com o objetivo de transformar o velho em novo, começamos a procurar peças e objetos que pudéssemos utilizar no projeto. Encontramos em uma caçamba materiais que poderiam ser transformados em peças para o JUKEBOX.</p>
+                    <p>Começando a contrução da estrutura com as medeiras encontradas seguindo projeto inicial.</p>
+                    <button class="read-section-button" aria-label="Ouvir descrição sobre a Coleta de material reciclado"><i class="fas fa-volume-up"></i> Ler Seção</button>
+                </div>
+                <div class="carousel">
+                    <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/material reciclavel/1.Estrutura.jpg" alt="Estrutura inicial da Jukebox">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/material reciclavel/2.jpg" alt="Materiais reciclados para o projeto">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/material reciclavel/20240215_090056.jpg" alt="Madeiras para a Jukebox">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/material reciclavel/20240222_091842.jpg" alt="Construção da base da Jukebox">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/material reciclavel/5 Materia Prima Reciclada.jpg" alt="Materia prima reciclada">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev" aria-label="Slide anterior do carrossel 'Coleta de Material Reciclado'">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next" aria-label="Próximo slide do carrossel 'Coleta de Material Reciclado'">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Próximo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="section right">
+                <div class="text">
+                    <h3>Montagem da Estrutura da Jukebox</h3>
+                    <p>Com madeiras recicladas, Geraldo iniciou a montagem da estrutura. A primeira etapa foi a construção da parte frontal, onde ele inseriu um desenho estilizado das claves de sol e fá, harmonizando com o propósito do projeto. Em seguida, montou as laterais e a parte superior. Depois, instalou a porta traseira e, por fim, realizou os recortes para os alto-falantes, a tela do monitor e os botões da jukebox.</p>
+                    <p>Para mais detalhes sobre o processo, consulte o passo a passo completo da montagem em:</p>
+                    <a href="https://docs.google.com/document/d/13PSch7vm5__vY3S9jNHtmFm35d4ZW-Uu/edit?usp=drive_link&ouid=111139404779385349277&rtpof=true&sd=true" target="_blank" aria-label="Link para o guia de montagem da Jukebox, abre em nova aba">Guia de Montagem da Jukebox</a>.
+                    <button class="read-section-button" aria-label="Ouvir descrição sobre a Montagem da Estrutura da Jukebox"><i class="fas fa-volume-up"></i> Ler Seção</button>
+                </div>
+                <div class="carousel">
+                    <div id="carouselExampleControls3" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/1 parte.jpg" alt="Construção da parte frontal da Jukebox">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/2 parte.png" alt="Desenho das claves de sol e fá na estrutura">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/3 parte.jpg" alt="Montagem das laterais da Jukebox">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/4 parte.jpg" alt="Estrutura da Jukebox com madeiras recicladas">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/5 parte.jpg" alt="Instalação da porta traseira da Jukebox">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/6 parte.jpg" alt="Recortes para alto-falantes e monitor">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/7 parte.jpg" alt="Detalhe dos recortes na estrutura">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/8 parte.jpg" alt="Preparação para os botões da jukebox">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/9 parte.jpg" alt="Finalização da estrutura de madeira">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/10 parte.jpg" alt="Visão geral da estrutura pronta">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/11 parte.jpg" alt="Estrutura vista de outro ângulo">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/12 parte.jpg" alt="Detalhe dos acabamentos da estrutura">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/contrução da estrutura/final1.png" alt="Jukebox com estrutura finalizada e pintura">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-slide="prev" aria-label="Slide anterior do carrossel 'Montagem da Estrutura'">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-slide="next" aria-label="Próximo slide do carrossel 'Montagem da Estrutura'">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Próximo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="section left">
+                <div class="text">
+                    <h3>Montagem dos Dispositivos da Jukebox</h3>
+                    <p>Com a estrutura concluída, iniciamos a instalação dos componentes internos da jukebox. Fixamos o monitor, os botões na placa arcade, os alto-falantes e as cornetas. Em seguida, instalamos a placa-mãe, a fonte de alimentação e o HD. Para proteger contra surtos elétricos, adicionamos um filtro de linha com seis tomadas e fusível. Também incluímos uma tomada fêmea para o cabo de energia, com botão liga/desliga, conectando todos os componentes com um único cabo de alimentação.</p>
+                    <button class="read-section-button" aria-label="Ouvir descrição sobre a Montagem dos Dispositivos da Jukebox"><i class="fas fa-volume-up"></i> Ler Seção</button>
+                </div>
+                <div class="carousel">
+                    <div id="carouselExampleControls4" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Montagem dos dispositivos/19 PI 1 Interno.jpg" alt="Componentes internos da Jukebox">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Montagem dos dispositivos/20 PI 1 Interno.jpg" alt="Fiação interna e organização dos componentes">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Montagem dos dispositivos/9 parte.jpg" alt="Placa arcade e botões instalados">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Montagem dos dispositivos/IMG_20240306_214353.jpg" alt="Vista interna da Jukebox com fiação">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls4" role="button" data-slide="prev" aria-label="Slide anterior do carrossel 'Montagem dos Dispositivos'">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls4" role="button" data-slide="next" aria-label="Próximo slide do carrossel 'Montagem dos Dispositivos'">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Próximo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="section right">
+                <div class="text">
+                    <h3>Apresentação do Projeto</h3>
+                    <p>Durante uma semana, apresentamos o projeto integrador da UC4 para diversas turmas do SENAC, recebendo feedback extremamente positivo e várias sugestões para aprimorar a iniciativa. O projeto alcançou a nota necessária para aprovação na disciplina e obteve grande sucesso, sendo destacado na página de marketing do SENAC Minas no Instagram</p>
+                    <button class="read-section-button" aria-label="Ouvir descrição sobre a Apresentação do Projeto"><i class="fas fa-volume-up"></i> Ler Seção</button>
+                </div>
+                <div class="carousel">
+                    <div id="carouselExampleControls5" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Apresentação/13 PI 1.jpg" alt="Apresentação do projeto Jukebox no SENAC">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Apresentação/14 PI 1.jpg" alt="Membros da equipe apresentando a Jukebox">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Apresentação/15 PI 1.jpg" alt="Demonstração do Jukebox para o público">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Apresentação/17 PI 1.jpg" alt="Feedback positivo durante a apresentação">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Apresentação/18 PI 1 Interno.jpg" alt="Visão interna do Jukebox durante a apresentação">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Apresentação/IMG_20240314_214108.jpg" alt="Jukebox em destaque no evento">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Apresentação/IMG_20240320_212959.jpg" alt="Interação com a Jukebox em tempo real">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Apresentação/IMG_20240320_213020.jpg" alt="Exibição do projeto para outras turmas">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Apresentação/IMG_20240326_203057.jpg" alt="Registro da apresentação na página do SENAC">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="imgcarrossel" src="../image/IMAGENS JUKEBOX/Apresentação/IMG_20240326_212508.jpg" alt="Equipe do projeto Jukebox no dia da apresentação">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls5" role="button" data-slide="prev" aria-label="Slide anterior do carrossel 'Apresentação do Projeto'">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls5" role="button" data-slide="next" aria-label="Próximo slide do carrossel 'Apresentação do Projeto'">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Próximo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <h3 id="textoGaleria">Galeria de Fotos</h3>
+            <div class="gallery">
+                <img src="../image/galeria/equipe.jpg" alt="Foto da equipe do Jukebox Music" loading="lazy" onclick="openModal(0)">
+                <img src="../image/galeria/evento.jpg" alt="Imagem de usuários interagindo com o Jukebox em evento" loading="lazy" onclick="openModal(1)">
+                <img src="../image/galeria/IMG_20241127_210307.jpg" alt="Showcase da interface do player com a Jukebox" loading="lazy" onclick="openModal(2)">
+                <img src="../image/galeria/IMG_20241127_210319.jpg" alt="Foto da equipe com o Jukebox pronto" loading="lazy" onclick="openModal(3)">
+                <img src="../image/galeria/interacao2.jpg" alt="Interação de pessoas com o Jukebox Music" loading="lazy" onclick="openModal(4)">
+                <img src="../image/galeria/interacaoJukebox.jpg" alt="Usuários controlando o Jukebox" loading="lazy" onclick="openModal(5)">
+                <img src="../image/galeria/mostrarJukebox.jpg" alt="Jukebox em exibição" loading="lazy" onclick="openModal(6)">
+            </div>
+
+            <div id="myModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalImage">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()" aria-label="Fechar galeria de imagens">×</span>
+                    <button class="nav-button prev-button" onclick="prevImage()" aria-label="Imagem anterior">&#10094;</button>
+                    <img id="modalImage" src="" alt="Imagem Ampliada">
+                    <button class="nav-button next-button" onclick="nextImage()" aria-label="Próxima imagem">&#10095;</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <nav role="navigation">
+            <div class="logo">
+                <strong>JUKEBOX<span class="highlight"> MUSIC</span></strong>
+            </div>
+            <div class="nav-links">
+                <a href="#sobre" aria-label="Navegar para a seção Sobre o Jukebox Music">Sobre</a>
+                <a href="../NOSSO_PROJETO/Player/index.html" aria-label="Navegar para o Jukebox Music Player">Jukebox Music Player</a>
+            </div>
+        </nav>
+        <p>© 2025 Jukebox Music. Todos os direitos reservados.</p>
+    </footer>
+
+    <button id="voltarTopo" title="Voltar ao topo" aria-label="Voltar ao topo da página">
+        ↑<span class="sr-only">Voltar ao topo</span>
+    </button>
+
+    <script src="../javaScript/Index.js"></script>
+    <script src="../javaScript/scroll.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../javaScript/darkmode.js"></script>
+    <script src="../javaScript/acessibility.js"></script>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visão, Missão e Valores</title>
+    <link rel="stylesheet" href="../css/sobre.css">
+   
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <div> <strong>JUKEBOX<span style="color: #00bcd4;"> MUSIC</span></strong>
+        </h1>
+
+        <div class="section left">
+            <img src="../imagens/carrosel1.jpg" alt="Imagem 1">
+            <div class="text">
+                <h2>Criando Jukebox</h2>
+                <p>Criamos uma</p>
+            </div>
+        </div>
+
+        <div class="section right">
+            <div class="text">
+                <h2>Missão</h2>
+                <p>Oferecer produtos e serviços de alta qualidade, promovendo o bem-estar da sociedade e respeitando os princípios éticos e ambientais em todas as nossas operações.</p>
+            </div>
+            <img src="https://via.placeholder.com/300x200?text=Imagem+2" alt="Imagem 2">
+        </div>
+
+        <div class="section left">
+            <img src="https://via.placeholder.com/300x200?text=Imagem+3" alt="Imagem 3">
+            <div class="text">
+                <h2>Valores</h2>
+                <p><strong>Integridade:</strong> Agir com transparência e honestidade em todas as nossas relações, mantendo a confiança de clientes, parceiros e colaboradores.</p>
+            </div>
+        </div>
+
+        <div class="section right">
+            <div class="text">
+                <p><strong>Inovação:</strong> Buscar constantemente novas ideias e tecnologias para oferecer soluções criativas e eficazes que atendam às necessidades do mercado.</p>
+            </div>
+            <img src="https://via.placeholder.com/300x200?text=Imagem+4" alt="Imagem 4">
+        </div>
+
+        <div class="section left">
+            <img src="https://via.placeholder.com/300x200?text=Imagem+5" alt="Imagem 5">
+            <div class="text">
+                <p><strong>Sustentabilidade:</strong> Comprometer-se com práticas que preservem o meio ambiente, promovendo o uso responsável dos recursos naturais.</p>
+            </div>
+        </div>
+
+        <div class="section right">
+            <div class="text">
+                <p><strong>Colaboração:</strong> Valorizar o trabalho em equipe e a diversidade, criando um ambiente inclusivo que inspire o crescimento pessoal e profissional.</p>
+            </div>
+            <img src="https://via.placeholder.com/300x200?text=Imagem+6" alt="Imagem 6">
+        </div>
+
+        <h1>Galeria de Fotos</h1>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300x200?text=Galeria+1" alt="Galeria 1">
+            <img src="https://via.placeholder.com/300x200?text=Galeria+2" alt="Galeria 2">
+            <img src="https://via.placeholder.com/300x200?text=Galeria+3" alt="Galeria 3">
+            <img src="https://via.placeholder.com/300x200?text=Galeria+4" alt="Galeria 4">
+        </div>
+    </div>
+
+    <script>
+        // Animação ao rolar a página
+        const sections = document.querySelectorAll('.section');
+
+        function checkVisibility() {
+            const triggerBottom = window.innerHeight * 0.8;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkVisibility);
+        checkVisibility(); // Verifica ao carregar a página
+    </script>
+</body>
+</html>

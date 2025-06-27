@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jukebox - Carregar Músicas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+</head>
+<body>
+    <main class="music-container">
+        <!-- Botão de Voltar ao Menu -->
+        <div class="back-button-container">
+            <a href="../Player/index.html" class="back-button"><i class="bi bi-arrow-left-circle"></i> Voltar ao Menu</a>
+        </div>
+
+        <!-- Seção para Carregar Músicas Locais -->
+        <section class="upload-section">
+            <h2>Carregar Músicas Locais</h2>
+            <button id="upload-button">Selecionar</button>
+            <div id="upload-options" class="upload-options" style="display: none;">
+                <button id="load-folder">Carregar Álbum</button>
+                <button id="load-files">Carregar Músicas</button>
+            </div>
+
+            <!-- Seção para exibir a mensagem "Nenhum Álbum Selecionado" -->
+            <section id="no-album-selected" class="no-album-selected">
+                <p>Nenhum álbum selecionado</p>
+            </section>
+        </section>
+
+        <!-- Lista de músicas carregadas -->
+        <section id="songs-preview" class="songs-preview">
+            <h3>Músicas Carregadas</h3>
+            <ul id="songs-list"></ul>
+            <button id="go-to-player" style="display: none; margin-top: 1rem;">Tocar No Player</button>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

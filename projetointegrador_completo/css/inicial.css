@@ -1,0 +1,849 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f0f8ff; /* aliceblue */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, rgb(56, 50, 65), rgb(80, 0, 70));
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transição suave */
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    font-weight: normal;
+    color: black;
+    transition: color 0.5s ease; /* Transição suave */
+}
+
+h1 {
+    font-size: 68px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 36px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Paragraphs */
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    transition: color 0.5s ease; /* Transição suave */
+}
+
+/* Strong text */
+strong {
+    font-weight: bold;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header */
+header {
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    top: 0;
+    text-align: center;
+    z-index: 2;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transição suave */
+}
+
+header nav {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex; /* MANTIDO: Essencial para o alinhamento flexbox */
+    justify-content: space-between; /* MANTIDO: Para distribuir logo, links e botões */
+    align-items: center;
+    padding: 20px 50px;
+    background: black;
+    transition: background-color 0.5s ease; /* Transição suave */
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #00bcd4;
+    transition: color 0.5s ease; /* Transição suave */
+}
+
+header .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+header .nav-links a {
+    color: #fff;
+    font-size: 16px;
+    margin-left: 20px;
+    transition: opacity 0.3s, color 0.5s ease; /* Transição suave */
+}
+
+header .nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* INÍCIO DAS ALTERAÇÕES CSS */
+
+/* Agrupamento dos botões de acessibilidade no header */
+header nav .accessibility-buttons-group {
+    display: flex; /* Usa flexbox para agrupar os botões */
+    align-items: center; /* Alinha verticalmente os botões */
+    gap: 5px; /* Espaço mínimo entre os botões, tornando-os "bem próximos" */
+    margin-left: auto; /* Empurra este grupo para a direita da nav */
+}
+
+/* Estilos para os botões individuais de acessibilidade e dark mode */
+.accessibility-button,
+.dark-mode-toggle {
+    background-color: #00bcd4; /* Cor de fundo original para accessibility-button */
+    color: white; /* Cor do ícone */
+    border: none;
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave na mudança de cor */
+
+    /* Reduzindo o tamanho dos botões */
+    width: 30px; /* Largura menor */
+    height: 30px; /* Altura menor */
+    padding: 0; /* REMOVIDO: qualquer padding interno para controlar o tamanho com width/height */
+    margin: 0; /* REMOVIDO: qualquer margin padrão que possa interferir */
+
+    /* Centraliza o ícone dentro do botão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sobrescreve a cor de fundo para o dark-mode-toggle, pois você definiu transparent no seu CSS original */
+.dark-mode-toggle {
+    background-color: transparent; /* Mantém transparente para o ícone de lua/sol */
+}
+
+/* Ajusta o tamanho dos ícones Font Awesome dentro dos botões de acessibilidade */
+.accessibility-button i {
+    font-size: 14px; /* Garante que o ícone de volume/stop também seja menor */
+}
+
+/* Ajusta o tamanho do ícone do dark mode (opcional, pode ser o mesmo do accessibility-button i) */
+.dark-mode-toggle i {
+    font-size: 16px; /* Ícone de lua/sol um pouco maior se desejar */
+}
+
+/* FIM DAS ALTERAÇÕES CSS */
+
+/* Main */
+main {
+    flex: 1;
+    position: relative;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: background-color 0.5s ease; /* Transição suave se o background mudar diretamente */
+}
+
+.hero h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    font-size: 48px;
+}
+
+#conexao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../image/fundo2.jpeg") no-repeat center center/cover;
+    z-index: -1;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Button */
+.button {
+    background-color: #00bcd4;
+    padding: 10px 30px;
+    border-radius: 300px;
+    color: #fff;
+    font-size: 25px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+/*Button a Ir para;;*/
+.button:hover {
+    background-color: #303131;
+    text-decoration: none;
+    color: #fff;
+
+}
+
+/* Sobre Section */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Transição suave */
+}
+
+#sobre {
+    position: relative;
+    overflow: hidden;
+}
+
+#sobre h2 {
+    font-size: 40px;
+    color: #00bcd4;
+    text-align: center;
+    margin: 0 0 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#sobre h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #00bcd4;
+    transition: background-color 0.5s ease; /* Transição suave */
+}
+
+.section {
+    display: flex;
+    width: 100%;
+    margin: 20px 0;
+    background-color: #ffffff9c;
+    border-radius: 10px;
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+    transform: translateY(50px);
+    gap: 10px; /* Aumentado para 30px para mais espaçamento */
+}
+
+.section.left {
+    flex-direction: row; /* Carrossel à esquerda, texto à direita */
+    height: 350px;
+}
+
+.section.right {
+    flex-direction: row-reverse; /* Carrossel à direita, texto à esquerda */
+    height: 350px;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.section .carousel { /* Ajuste específico para o carrossel */
+    width: 350px;
+    max-width: 100%;
+    height: 345px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+}
+
+
+.imgcarrossel {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+
+
+.section .carousel img:hover {
+    transform: scale(1.05);
+}
+
+.text {
+    text-align: center;
+    flex: 1;
+    padding: 20px; /* Mantido para espaçamento interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text h3 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 15px;
+    border-left: 4px solid #00bcd4;
+    padding-left: 10px;
+    transition: color 0.5s ease, border-color 0.5s ease; /* Transição suave */
+}
+
+.text p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 0;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    transition: background-color 0.5s ease; /* Transição suave */
+}
+
+#textoGaleria {
+    font-size: 26px;
+    color: #00bcd4;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    transition: color 0.5s ease; /* Transição suave */
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s, border 0.5s ease; /* Transição suave */
+    border: 2px solid transparent;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-color: #00bcd4;
+}
+
+/* Estilo do modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    text-align: center;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transição suave */
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh; /* Limita a altura para caber na tela */
+    object-fit: contain; /* Mantém a proporção da imagem */
+    border-radius: 5px;
+}
+
+/* Botão de fechar */
+.close {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.5s ease; /* Transição suave */
+}
+
+/* Botões de navegação */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transição suave */
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 0;
+    margin-top: auto;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transição suave */
+}
+
+footer nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+footer .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+footer .nav-links a {
+    color: #fff;
+    font-size: 14px;
+    margin: 0 15px;
+    transition: opacity 0.3s, color 0.5s ease; /* Transição suave */
+}
+
+footer .nav-links a:hover {
+    opacity: 0.8;
+}
+
+footer p {
+    text-align: center;
+    margin: 8px 0 0;
+    font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 30px 15px;
+        border-radius: 10px;
+    }
+
+    #sobre h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    #sobre h2::after {
+        width: 80px;
+    }
+
+    .section {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        margin: 20px 0;
+        gap: 15px; /* Espaçamento reduzido para mobile */
+    }
+
+    .section .carousel {
+        width: 100%; /* Ocupa toda a largura em mobile */
+        height: 200px; /* Altura ajustada para mobile */
+    }
+
+    .section img {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .text h3 {
+        font-size: 22px;
+        padding-left: 8px;
+    }
+
+    .text p {
+        font-size: 15px;
+    }
+
+    .gallery {
+        padding: 20px 0;
+    }
+
+    .gallery h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    footer nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .logo {
+        margin-bottom: 5px;
+    }
+
+    footer .nav-links {
+        margin-bottom: 5px;
+    }
+
+    footer .nav-links a {
+        margin: 5px 10px;
+    }
+
+    footer p {
+        margin: 5px 0;
+        font-size: 12px;
+    }
+
+    header nav {
+        flex-direction: column; /* ALTERADO: Para empilhar itens na nav em telas menores */
+        padding: 10px 20px; /* Ajuste o padding para telas menores */
+    }
+
+    header .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap; /* Permite que os links quebrem a linha se houver muitos */
+        justify-content: center; /* Centraliza os links quando empilhados */
+    }
+
+    header .nav-links a {
+        margin: 5px 10px; /* Ajuste o margin para links em telas menores */
+    }
+
+    /* Ajuste para o grupo de botões de acessibilidade em telas menores */
+    header nav .accessibility-buttons-group {
+        margin-left: 0; /* Remove o margin-left: auto; para centralizar ou alinhar conforme o pai */
+        margin-top: 10px; /* Adiciona um espaço acima dos botões */
+        justify-content: center; /* Centraliza os botões em telas menores */
+        width: 100%; /* Ocupa a largura total para centralização */
+    }
+}
+
+#voltarTopo {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 100;
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 12px 16px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.5s ease, color 0.5s ease; /* Transição suave */
+}
+
+#voltarTopo:hover {
+    background-color: #0097a7;
+}
+
+#voltarTopo.mostrar {
+    opacity: 1;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* --- Estilos do Modo Escuro --- */
+
+/* Estilos para o body no modo escuro */
+body.dark-mode {
+    background-color: #1a1a1a; /* Fundo escuro */
+    color: #f8f8f8; /* Texto claro */
+    background: linear-gradient(135deg, rgb(20, 20, 25), rgb(40, 0, 35)); /* Gradiente mais escuro */
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #f8f8f8; /* Títulos claros */
+}
+
+body.dark-mode p {
+    color: #ccc; /* Parágrafos mais claros */
+}
+
+body.dark-mode header {
+    background-color: #2c2c2c; /* Header mais escuro */
+    border-bottom: 1px solid #444;
+}
+
+body.dark-mode header nav {
+    background: #2c2c2c; /* Cor de fundo da nav no modo escuro */
+}
+
+body.dark-mode .logo strong {
+    color: #f8f8f8;
+}
+
+body.dark-mode .highlight {
+    color: #90ee90; /* Destaque verde mais claro para o modo escuro */
+}
+
+body.dark-mode header .nav-links a {
+    color: #bbb; /* Links de navegação mais claros */
+}
+
+body.dark-mode header .nav-links a:hover {
+    color: #90ee90; /* Hover de links mais claro */
+}
+
+/* Ajuste para o botão do modo escuro quando a página está em dark mode */
+body.dark-mode .dark-mode-toggle {
+    color: #f8f8f8; /* Ícone de sol claro */
+    background-color: transparent; /* Mantém transparente */
+}
+
+body.dark-mode .hero {
+    /* O background do hero é uma imagem, então podemos escurecer o overlay */
+    /* Você pode adicionar um overlay escuro por cima da imagem se quiser */
+    background-color: rgba(0, 0, 0, 0.5); /* Exemplo de overlay */
+}
+
+body.dark-mode .button {
+    background-color: #90ee90; /* Botão com destaque verde */
+    color: #1a1a1a; /* Texto do botão escuro */
+}
+
+body.dark-mode .button:hover {
+    background-color: #76c676; /* Hover do botão mais escuro */
+}
+
+body.dark-mode .container {
+    background-color: #2c2c2c; /* Fundo das seções de conteúdo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra mais escura */
+}
+
+body.dark-mode #sobre h2 {
+    color: #90ee90; /* Título "Sobre" em destaque verde */
+}
+
+body.dark-mode #sobre h2::after {
+    background-color: #90ee90; /* Linha abaixo do título em destaque verde */
+}
+
+body.dark-mode .section {
+    background-color: #3a3a3a; /* Fundo das seções de artigo mais escuro */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais visível */
+}
+
+body.dark-mode .section:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .text h3 {
+    color: #f8f8f8; /* Títulos de texto claros */
+    border-left-color: #90ee90; /* Borda esquerda em destaque verde */
+}
+
+body.dark-mode .text p {
+    color: #ccc; /* Parágrafos de texto mais claros */
+}
+
+body.dark-mode .text a {
+    color: #90ee90; /* Links de texto mais claros */
+}
+
+body.dark-mode .text a:hover {
+    color: #76c676;
+}
+
+body.dark-mode .gallery {
+    background-color: #2c2c2c; /* Fundo da galeria no modo escuro */
+}
+
+body.dark-mode #textoGaleria {
+    color: #90ee90; /* Título da galeria em destaque verde */
+}
+
+body.dark-mode .gallery img:hover {
+    border-color: #90ee90; /* Borda da imagem em destaque verde */
+}
+
+body.dark-mode .modal-content {
+    background-color: #333; /* Fundo do modal no modo escuro */
+    color: #f8f8f8;
+}
+
+body.dark-mode .close {
+    color: #bbb;
+}
+
+body.dark-mode .nav-button {
+    background-color: rgba(255, 255, 255, 0.2); /* Botões de navegação do modal */
+    color: #f8f8f8;
+}
+
+body.dark-mode footer {
+    background-color: #2c2c2c; /* Footer mais escuro */
+    border-top: 1px solid #444;
+    color: #f8f8f8;
+}
+
+body.dark-mode footer .nav-links a {
+    color: #bbb;
+}
+
+body.dark-mode footer .nav-links a:hover {
+    color: #90ee90;
+}
+
+body.dark-mode #voltarTopo {
+    background-color: #555; /* Botão Voltar ao Topo */
+    color: #f8f8f8;
+}
+
+body.dark-mode #voltarTopo:hover {
+    background-color: #777;
+}
+
+/* Media Queries para responsividade no modo escuro - se precisar de ajustes específicos */
+@media (max-width: 768px) {
+    body.dark-mode .section {
+        background-color: #3a3a3a;
+    }
+}
+
+/* Estilo para os botões "Ler Seção" dentro dos artigos (mantido como estava) */
+.read-section-button {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.read-section-button:hover {
+    background-color: #0097a7;
+}
+
+/* Ajustes para o modo escuro para os botões "Ler Seção" */
+body.dark-mode .read-section-button {
+    background-color: #90ee90; /* Verde mais claro no modo escuro */
+    color: #1a1a1a;
+}
+
+body.dark-mode .read-section-button:hover {
+    background-color: #76c676;
+}

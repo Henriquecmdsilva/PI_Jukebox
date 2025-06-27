@@ -1,0 +1,392 @@
+body {
+    background: linear-gradient(135deg, rgb(56, 50, 65), rgb(80, 0, 70));
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ============================
+   Loading Overlay & Spinner
+   ============================ */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #ff00ff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ============================
+   Sidebar (Menu Lateral)
+   ============================ */
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 12.5rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 1.25rem;
+    box-shadow: 0.125rem 0 0.9375rem rgba(0, 0, 0, 0.5);
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+#sidebar ul li {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.9375rem;
+}
+
+#sidebar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    padding: 0.625rem;
+    transition: background-color 0.3s;
+}
+
+#sidebar ul li a:hover {
+    background-color: #ff00ff;
+    border-radius: 0.3125rem;
+}
+
+/* ============================
+   Player
+   ============================ */
+.music-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    width: 25rem;
+    box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.musical-notes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.musical-note {
+    position: absolute;
+    color: #ff00ff;
+    font-size: 1.5rem;
+    animation: float 2s linear forwards;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+#Musica, #player-controls {
+    position: relative;
+    z-index: 2;
+}
+
+#cover {
+    max-width: 100%;
+    border-radius: 0.625rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 0 0.9375rem rgba(255, 255, 255, 0.3);
+}
+
+#player-controls {
+    width: 100%;
+    margin: 0.625rem 0;
+}
+
+#song-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+#band-name {
+    font-size: 1.2rem;
+    color: #bdc3c7;
+}
+
+#progress-container {
+    width: 100%;
+    height: 0.5rem;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0.3125rem;
+    margin: 0.9375rem 0;
+    cursor: pointer;
+}
+
+#current-progress {
+    background: #ff00ff;
+    height: 100%;
+    width: 0;
+    border-radius: 0.3125rem;
+    transition: width 0.1s linear;
+}
+
+#time-container {
+    font-size: 1rem;
+    color: #bdc3c7;
+}
+
+#current-time {
+    color: #ff00ff;
+}
+
+#volume-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.9375rem;
+}
+
+#volume-container i {
+    font-size: 1.5rem;
+    margin-right: 0.625rem;
+}
+
+#volume {
+    width: 6.25rem;
+    accent-color: #ff00ff;
+}
+
+#buttons-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 0.9375rem;
+}
+
+button {
+    background: transparent;
+    border: none;
+    color: #ecf0f1;
+    cursor: pointer;
+    font-size: 2.5rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    color: #ff00ff;
+}
+
+button.active {
+    color: #ff69b4;
+}
+
+#audio {
+    display: none;
+}
+
+/* ============================
+   Upload Interface
+   ============================ */
+.upload-options button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgb(56, 50, 65), rgb(80, 0, 70));
+    color: #ecf0f1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.upload-options button:hover {
+    transform: scale(1.05);
+    background-color: #6c5ce7;
+}
+
+/* ============================
+   Lista de Músicas (Estilo Moderno)
+   ============================ */
+.modern-song-list {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #1f1f2e;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.modern-song-list h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #8e44ad;
+    padding-bottom: 0.5rem;
+}
+
+#song-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#song-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2b2b3c;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+#song-list li:hover {
+    background-color: #383852;
+    transform: translateY(-2px);
+}
+
+#song-list li .song-title {
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+#song-list li .play-icon {
+    margin-right: 10px;
+    color: #8e44ad;
+    font-size: 1.3rem;
+}
+
+/* ============================
+   Upload Modal e Overlay
+   ============================ */
+#upload-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    background-color: rgba(30, 30, 30, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    z-index: 10001;
+    overflow-y: auto;
+}
+
+#upload-modal h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #c59eff;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+#music-blocks {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#music-blocks > div {
+    background-color: #2a2a2a;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#music-blocks > div:hover {
+    transform: translateY(-2px);
+    background-color: #383838;
+}
+
+#music-blocks strong {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 4px;
+    color: #f1f1f1;
+}
+
+#music-blocks em {
+    color: #bbb;
+    font-size: 0.9em;
+}
+
+#music-blocks button {
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6c5ce7;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+#music-blocks button:hover {
+    background-color: #7a6ff2;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

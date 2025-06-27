@@ -1,0 +1,138 @@
+/* CSS Variables from Playlist section for Consistency */
+:root {
+    --primary-color: #8e44ad;
+    --hover-color: #3700b3;
+    --accent-color: #bb86fc;
+    --button-bg: #6200ee;
+    --modal-bg: rgba(20, 20, 20, 0.9);
+    --text-color: #f0f0f0;
+    --secondary-text: #e0e0e0;
+    --muted-text: #bbb;
+    --border-radius: 8px;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    --transition: all 0.3s ease;
+}
+
+/* General Body and Font from Help section */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, rgb(56, 50, 65), rgb(80, 0, 70)); /* From Playlist CSS */
+    color: var(--text-color); /* From Playlist CSS */
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: var(--accent-color); /* From Playlist CSS */
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin-top: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #1e1e1e; /* From Help CSS */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5); /* From Help CSS */
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+}
+
+li::before {
+    content: "🎵 "; /* From Help CSS */
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Button Styling (Combined from Playlist and Help) */
+.tutorial-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--primary-color); /* From Playlist CSS */
+    color: white;
+    border: none;
+    border-radius: var(--border-radius); /* From Playlist CSS */
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition); /* From Playlist CSS */
+    font-size: 1rem;
+    display: flex; /* Use flexbox for centering icon and text */
+    align-items: center;
+    justify-content: center;
+}
+
+.tutorial-button:hover {
+    background-color: var(--hover-color); /* From Playlist CSS */
+}
+
+.tutorial-button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.section-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.section-box h3 {
+    color: var(--secondary-text);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+code {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    color: var(--accent-color);
+    font-size: 0.9em;
+}
+
+/* Responsive Design adapted from Playlist CSS */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 20px;
+        margin: 10px auto;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    .tutorial-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}

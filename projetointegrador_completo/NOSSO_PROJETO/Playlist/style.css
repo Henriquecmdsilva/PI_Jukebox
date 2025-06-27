@@ -1,0 +1,692 @@
+/* CSS Variables for Consistency */
+:root {
+    --primary-color: #8e44ad;
+    --hover-color: #3700b3;
+    --accent-color: #bb86fc;
+    --button-bg: #6200ee;
+    --modal-bg: rgba(20, 20, 20, 0.9);
+    --text-color: #f0f0f0;
+    --secondary-text: #e0e0e0;
+    --muted-text: #bbb;
+    --border-radius: 8px;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    --transition: all 0.3s ease;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background: linear-gradient(135deg, rgb(56, 50, 65), rgb(80, 0, 70));
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 1.25rem; /* 20px */
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: var(--accent-color);
+}
+
+/* Visually Hidden */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Back Button */
+.back-button-container {
+    position: fixed;
+    top: 0.625rem; /* 10px */
+    right: 0.625rem; /* 10px */
+    z-index: 1000;
+}
+
+.back-button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5rem 0.625rem; /* 8px 10px */
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: var(--hover-color);
+}
+
+.back-button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.back-button i {
+    margin-right: 0.5rem; /* 8px */
+}
+
+/* Create Playlist Button */
+.create-playlist-container {
+    margin-top: -0.9375rem; /* -15px */
+}
+
+.create-playlist-button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.625rem 1.875rem; /* 10px 30px */
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+    position: fixed; /* Fixa o botão */
+    top: 0; /* Fixa no topo */
+    left: 4%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centralizar corretamente */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+}
+
+.create-playlist-button:hover {
+    background-color: var(--hover-color);
+}
+
+.create-playlist-button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.create-playlist-button i {
+    margin-right: 0.5rem; /* 8px */
+}
+
+/* General Button Styles */
+button {
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.625rem 0.9375rem; /* 10px 15px */
+    color: white;
+    cursor: pointer;
+    margin: 0.3125rem; /* 5px */
+    transition: var(--transition);
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Genre Buttons */
+#genres-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem; /* 10px */
+    margin-bottom: 1.25rem; /* 20px */
+}
+
+.genre-button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem; /* 8px 16px */
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.genre-button:hover {
+    background-color: var(--hover-color);
+}
+
+.genre-button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.genre-button.selected {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* Playlist and Playlists List */
+#playlist, #playlists-list {
+    margin-top: 1.875rem; /* 30px */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem; /* 20px */
+}
+
+/* Music and Playlist Items */
+.music-item, .playlist-item {
+    background-color: var(--modal-bg);
+    padding: 0.9375rem; /* 15px */
+    border-radius: 10px;
+    width: 11.25rem; /* 180px */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    animation: fadeInItem 0.3s ease forwards;
+}
+
+.music-item:hover, .playlist-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.music-cover {
+    width: 100%;
+    height: 9.375rem; /* 150px */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.music-info {
+    margin-top: 0.625rem; /* 10px */
+}
+
+.music-info h3 {
+    font-size: 1rem; /* 16px */
+    margin: 0.3125rem 0; /* 5px */
+    color: var(--secondary-text);
+}
+
+.music-info p {
+    font-size: 0.875rem; /* 14px */
+    color: var(--muted-text);
+}
+
+/* Modal */
+.modal, #modal-adicionar-musicas {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content, .modal-content-adicionar {
+    background-color: var(--modal-bg);
+    padding: 2rem; /* 32px */
+    border-radius: 15px;
+    width: 90%;
+    max-width: 35rem; /* 560px */
+    color: var(--text-color);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow);
+    border: 1px solid transparent;
+    background-image: linear-gradient(var(--modal-bg), var(--modal-bg)), 
+                      linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    animation: scaleIn 0.3s ease;
+    position: relative;
+}
+
+.modal-content h2, .modal-content-adicionar h2 {
+    color: var(--accent-color);
+    margin-bottom: 1rem; /* 16px */
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+}
+
+/* Close Button */
+.fechar-modal {
+    position: absolute;
+    top: 0.75rem; /* 12px */
+    right: 0.75rem; /* 12px */
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem; /* 24px */
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0.25rem; /* 4px */
+}
+
+.fechar-modal:hover {
+    color: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.fechar-modal:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Form Styles */
+#create-playlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* 16px */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.75rem 1rem; /* 12px 16px */
+    border-radius: var(--border-radius);
+    border: 1px solid #444;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin-bottom: 0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem; /* 16px */
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(187, 134, 252, 0.5);
+    outline: none;
+}
+
+input[type="text"]::placeholder {
+    color: var(--muted-text);
+}
+
+/* Music Selection */
+.music-selection {
+    max-height: 20rem; /* 320px */
+    overflow-y: auto;
+    padding: 0.5rem; /* 8px */
+    border: 1px solid #444;
+    border-radius: var(--border-radius);
+    background-color: #1e1e1e;
+}
+
+/* Scrollbar Styling */
+.music-selection::-webkit-scrollbar {
+    width: 0.5rem; /* 8px */
+}
+
+.music-selection::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: var(--border-radius);
+}
+
+.music-selection::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--border-radius);
+}
+
+.music-selection::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color);
+}
+
+/* Genre Sections */
+.genre-section {
+    margin-bottom: 0.5rem; /* 8px */
+}
+
+.genre-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem; /* 8px */
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.genre-header:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.genre-header h3 {
+    font-size: 1rem; /* 16px */
+    margin: 0;
+}
+
+.genre-header i {
+    transition: transform 0.3s ease;
+}
+
+.genre-header[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+.genre-content {
+    display: none;
+    padding: 0.5rem; /* 8px */
+}
+
+.genre-content[aria-hidden="false"] {
+    display: block;
+}
+
+/* Music Option */
+.music-option {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem; /* 8px */
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s ease;
+    font-size: 0.875rem; /* 14px */
+}
+
+.music-option:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+input[type="checkbox"] {
+    margin-right: 0.625rem; /* 10px */
+    accent-color: var(--accent-color);
+    width: 1rem; /* 16px */
+    height: 1rem; /* 16px */
+}
+
+/* Select All Checkbox */
+.select-all-container {
+    padding: 0.5rem; /* 8px */
+    border-bottom: 1px solid #444;
+    margin-bottom: 0.5rem; /* 8px */
+}
+
+.select-all-container label {
+    font-weight: bold;
+    color: var(--secondary-text);
+}
+
+/* Form Inputs */
+label {
+    display: block;
+    margin: 0.3125rem 0; /* 5px */
+    font-size: 0.875rem; /* 14px */
+}
+
+/* Confirmation Message */
+#mensagem-confirmacao {
+    display: none;
+    position: fixed;
+    bottom: 1.25rem; /* 20px */
+    right: 1.25rem; /* 20px */
+    background-color: #03dac6;
+    color: #121212; /* Darker text for better contrast */
+    padding: 0.9375rem 1.25rem; /* 15px 20px */
+    border-radius: 10px;
+    font-weight: bold;
+    z-index: 20;
+    box-shadow: var(--shadow);
+    animation: slideIn 0.3s ease;
+}
+
+/* Playlist Header */
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.playlist-header button {
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.playlist-header button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInItem {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 0.625rem; /* 10px */
+    }
+
+    .back-button-container {
+        top: 0.5rem; /* 8px */
+        right: 0.5rem; /* 8px */
+    }
+
+    .create-playlist-container {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    #genres-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .genre-button {
+        width: 100%;
+        max-width: 15rem; /* 240px */
+    }
+
+    .music-item, .playlist-item {
+        width: 100%;
+        max-width: 15rem; /* 240px */
+    }
+
+    .modal-content, .modal-content-adicionar {
+        width: 95%;
+        padding: 1.5rem; /* 24px */
+        max-width: 90vw;
+    }
+
+    .modal-content h2, .modal-content-adicionar h2 {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .music-selection {
+        max-height: 15rem; /* 240px */
+    }
+
+    #mensagem-confirmacao {
+        bottom: 0.625rem; /* 10px */
+        right: 0.625rem; /* 10px */
+        max-width: 90%;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.25rem; /* Ajuste para telas menores */
+    }
+
+    button, .create-playlist-button, .back-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-cover {
+        height: 7.5rem; /* 120px */
+    }
+
+    .music-info h3 {
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .music-info p {
+        font-size: 0.75rem; /* 12px */
+    }
+
+    .modal-content, .modal-content-adicionar {
+        padding: 1rem; /* 16px */
+    }
+
+    input[type="text"] {
+        padding: 0.5rem; /* 8px */
+    }
+
+    .music-option {
+        padding: 0.375rem; /* 6px */
+        font-size: 0.75rem; /* 12px */
+    }
+}
+
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.text {
+    color: white;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    line-height: 1.4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+    z-index: 1;
+    position: relative;
+}
+
+.word {
+    white-space: nowrap;
+}
+
+.letter, .emoji {
+    display: inline-block;
+    opacity: 0;
+    animation:
+        appear 0.6s ease-in-out forwards,
+        float 3s ease-in-out infinite,
+        repeatFade 10s linear infinite;
+    animation-delay: calc(var(--delay) * 1s);
+}
+
+.emoji {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+@keyframes appear {
+    0% { opacity: 0; transform: translateY(30px) rotate(5deg) scale(0.8); }
+    100% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes repeatFade {
+    0%, 50% { opacity: 1; }
+    60%, 100% { opacity: 0; }
+}
+
+/* Container para centralizar o card */
+.container-centralizador-grid {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+/* Estilo do card */
+.card {
+    width: 300px;
+    border: 0px solid #000000;
+    border-radius: 0px;
+    box-shadow: 2px 2px 5px #000000;
+    padding: 17px;
+    text-align: center;
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 450px)); /* Combina centralização e deslocamento vertical */
+    z-index: 1000;
+    transition: opacity 0.3s ease; /* Suaviza a transição ao ocultar/mostrar */
+}
+
+/* Oculta o card quando o modal estiver visível */
+.modal[style*="display: flex"] ~ .container-centralizador-grid .card,
+.modal[style*="display: block"] ~ .container-centralizador-grid .card {
+    opacity: 0;
+    pointer-events: none; /* Impede interações com o card enquanto oculto */
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    margin-top: 10px;
+}
+
+.card p {
+    font-size: 0.9em;
+}
+
+/* Custom Button */
+.custom-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.custom-button:hover {
+    background-color: var(--hover-color);
+}
+
+.custom-button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}

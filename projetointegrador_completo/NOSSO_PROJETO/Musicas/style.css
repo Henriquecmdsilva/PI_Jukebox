@@ -1,0 +1,455 @@
+/* ===== Estilos Gerais ===== */
+body {
+  background: linear-gradient(135deg, rgb(56, 50, 65), rgb(80, 0, 70));
+  color: #ecf0f1;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: auto;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ecf0f1;
+  text-shadow: 0 0 0.75rem #8e44ad, 0 0 1.25rem #8e44ad;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* ===== Seções de Gêneros ===== */
+.genre-section {
+  margin-bottom: 3.125rem;
+}
+
+.genre-section h2 {
+  font-size: 2.5rem;
+  color: #ecf0f1;
+  margin-bottom: 0.9375rem;
+  text-shadow: 0 0 0.5rem #8e44ad;
+  text-align: center;
+}
+
+/* ===== Itens de Música ===== */
+.music-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  border-radius: 0.9375rem;
+  padding: 1.25rem;
+  max-width: 15.625rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
+  margin: 1.25rem;
+}
+
+.music-item:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0.9375rem 1.875rem rgba(128, 0, 255, 0.4);
+}
+
+.music-cover {
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.9375rem;
+}
+
+/* ===== Informações da Música ===== */
+.music-info {
+  text-align: center;
+  color: #ecf0f1;
+}
+
+.music-info h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  text-shadow: 0 0 0.5rem #8e44ad;
+}
+
+.music-info p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #bdc3c7;
+}
+
+.music-info a {
+  margin-top: 0.9375rem;
+  padding: 0.625rem 1.25rem;
+  background-color: #16a085;
+  color: #ecf0f1;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.music-info a:hover {
+  background-color: #1abc9c;
+  transform: scale(1.05);
+}
+
+/* ===== Lista de Músicas ===== */
+#music-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+  padding-top: 1.25rem;
+}
+
+/* ===== Botão de Voltar ===== */
+.back-button-container {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  font-size: 1.125rem;
+}
+
+.back-button {
+  font-size: 1.2rem;
+  color: #ecf0f1;
+  text-decoration: none;
+  background-color: #8e44ad;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #9b59b6;
+  transform: scale(1.05);
+}
+
+/* ===== Layout Responsivo ===== */
+@media (max-width: 37.5rem) {
+  .music-item {
+    max-width: 12.5rem;
+  }
+
+  .music-cover {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+
+  .music-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .music-info p,
+  .music-info a {
+    font-size: 1rem;
+  }
+}
+
+/* ===== Acessibilidade ===== */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
+/* ===== Estilos para o bloco de "Músicas Carregadas" (colapsável lateral) ===== */
+.genre-collapsible {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  width: 320px; /* Largura fixa para desktop */
+  max-width: 90vw; /* Ajusta para telas menores */
+  /* ALTERAÇÃO AQUI: Usando o gradiente do body para o fundo */
+  background: linear-gradient(135deg, rgb(56, 50, 65), rgb(80, 0, 70));
+  border-radius: 1.25rem; /* Bordas mais arredondadas */
+  /* Substitui box-shadow por um glow mais intenso */
+  box-shadow: 0 0 1.5rem rgba(142, 68, 173, 0.7), /* Glow primário (roxo) */
+              0 0 3rem rgba(142, 68, 173, 0.4); /* Glow secundário e mais espalhado */
+  overflow: hidden; /* Garante que o conteúdo não vaze */
+  display: flex;
+  flex-direction: column;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease-out, box-shadow 0.3s ease; /* Transições mais suaves */
+}
+
+/* Quando fechado, altura reduzida e cursor indicando que é clicável */
+.genre-collapsible:not([open]) {
+  max-height: 4rem; /* Altura ligeiramente maior para o header */
+  cursor: pointer;
+  border-bottom: 2px solid #8e44ad; /* Adiciona uma linha de separação na parte inferior quando fechado */
+}
+
+/* Ocultar o marcador padrão do <details> em todos os navegadores */
+details summary::-webkit-details-marker {
+  display: none;
+}
+details summary::marker {
+  display: none;
+}
+
+
+/* Estilos para o cabeçalho/botão do colapsável */
+.collapsible-header {
+  font-size: 1.25rem; /* Fonte um pouco maior */
+  padding: 1rem 1.25rem; /* Mais padding para um visual mais robusto */
+  /* ALTERAÇÃO AQUI: Mantendo o gradiente roxo para o cabeçalho */
+  background: linear-gradient(90deg, #8e44ad, #a252c7); /* Gradiente no background */
+  color: #fff;
+  border-radius: 1.15rem 1.15rem 0 0; /* Bordas superiores arredondadas */
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Mais espaço entre ícone e texto */
+  box-shadow: 0 0.5rem 1rem rgba(142, 68, 173, 0.6); /* Sombra mais destacada */
+  user-select: none;
+  width: 100%;
+  justify-content: center;
+  font-weight: 700; /* Mais negrito */
+  text-shadow: 0 0 0.75rem #72007d; /* Mais brilho no texto */
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  /* Adicionar um ícone de "seta" para indicar expansão/colapso */
+  position: relative; /* Para posicionar a seta */
+}
+
+.collapsible-header:hover {
+  /* ALTERAÇÃO AQUI: Mudar gradiente no hover */
+  background: linear-gradient(90deg, #9b59b6, #b07de1); /* Mudar gradiente no hover */
+  transform: translateY(-3px); /* Leve elevação */
+  box-shadow: 0 0.75rem 1.5rem rgba(142, 68, 173, 0.8); /* Sombra mais forte no hover */
+}
+
+/* Seta para indicar estado (aberto/fechado) */
+.collapsible-header::after {
+  content: '\25BC'; /* Triângulo apontando para baixo */
+  font-size: 0.9rem;
+  margin-left: 1rem; /* Afastar um pouco mais */
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.genre-collapsible[open] .collapsible-header::after {
+  transform: rotate(180deg); /* Gira para cima quando aberto */
+}
+
+/* Ícone e contador no cabeçalho */
+.collapsible-header .icon {
+  font-size: 1.6rem; /* Ícone maior */
+  color: #e0e0e0; /* Mantém a cor de destaque do Spotify */
+  text-shadow: 0 0 0.5rem black /* Brilho no ícone */
+}
+
+.collapsible-header .count {
+  font-size: 1.1rem; /* Fonte um pouco maior */
+  color: #e0e0e0;
+  background-color: rgba(0, 0, 0, 0.3); /* Fundo levemente transparente para o contador */
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.75rem; /* Mais arredondado */
+  font-weight: normal;
+}
+
+/* Estilos para a lista de músicas dentro do colapsável */
+.music-list-collapsible {
+  margin-top: 0; /* Remover margin-top, o padding do header já separa */
+  /* ALTERAÇÃO AQUI: Fundo da lista com um tom ligeiramente diferente do corpo principal */
+  background: rgba(10, 0, 30, 0.95); /* Fundo mais escuro e opaco para a lista */
+  border-radius: 0 0 1.25rem 1.25rem; /* Bordas inferiores arredondadas */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column; /* Itens em coluna para melhor aproveitamento do espaço */
+  align-items: center; /* Centraliza os itens */
+  gap: 0.75rem; /* Menor espaço entre os itens na lista lateral */
+  max-height: 55vh; /* Altura máxima ligeiramente maior para mais músicas */
+  overflow-y: auto; /* Scroll apenas vertical */
+  transition: max-height 0.4s ease-in; /* Transição mais suave ao abrir */
+}
+
+/* Ajusta os itens de música dentro da lista lateral */
+.music-list-collapsible .music-item {
+  width: 100%; /* Ocupa a largura total do container */
+  max-width: none; /* Remove max-width imposto por outros itens */
+  flex-direction: row; /* Volta para linha para melhor layout no painel */
+  justify-content: space-between; /* Espaça conteúdo e ações */
+  align-items: center;
+  padding: 0.75rem 1rem; /* Mais padding */
+  margin: 0;
+  /* ALTERAÇÃO AQUI: Fundo do item com um tom translúcido */
+  background-color: rgba(255, 255, 255, 0.08); /* Fundo levemente transparente */
+  box-shadow: 0 0.25rem 0.75rem rgba(128, 0, 255, 0.3); /* Sombra mais discreta */
+  border: 1px solid rgba(142, 68, 173, 0.4); /* Borda sutil com cor de destaque */
+  border-radius: 0.75rem; /* Bordas arredondadas */
+}
+
+.music-list-collapsible .music-item:hover {
+  transform: scale(1.02); /* Leve aumento no hover */
+  box-shadow: 0 0.5rem 1.25rem rgba(128, 0, 255, 0.5);
+  /* ALTERAÇÃO AQUI: Fundo do item mais visível no hover */
+  background-color: rgba(255, 255, 255, 0.12); /* Fundo mais visível no hover */
+}
+
+.music-list-collapsible .music-cover {
+  width: 45px; /* Capa menor no painel lateral */
+  height: 45px;
+  margin-bottom: 0; /* Remove margin-bottom */
+  margin-right: 0.75rem; /* Adiciona margin à direita */
+  border-radius: 0.5rem; /* Capas mais quadradas */
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.music-list-collapsible .music-info {
+  text-align: left; /* Alinha texto à esquerda */
+  flex-grow: 1; /* Permite que ocupe mais espaço */
+  overflow: hidden; /* Garante que o texto não vaze */
+  white-space: nowrap; /* Impede quebras de linha */
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+}
+
+.music-list-collapsible .music-info h3 {
+  font-size: 1rem; /* Fonte menor para título */
+  text-shadow: none; /* Remove text-shadow para clareza */
+  color: #fff;
+}
+
+.music-list-collapsible .music-info p {
+  font-size: 0.85rem; /* Fonte menor para detalhes */
+  color: #cccccc;
+}
+
+.music-list-collapsible .music-actions {
+  display: flex;
+  flex-direction: row; /* Botões na mesma linha */
+  gap: 0.5rem; /* Espaço menor entre os botões */
+}
+
+.music-list-collapsible .play-button,
+.music-list-collapsible .delete-button {
+  padding: 0.4rem 0.7rem; /* Padding menor para botões compactos */
+  font-size: 0.8rem; /* Fonte menor */
+  border-radius: 0.4rem; /* Bordas mais arredondadas */
+  flex-shrink: 0; /* Impede que os botões encolham */
+}
+
+.music-list-collapsible .delete-button {
+  background-color: #c0392b; /* Cor mais forte para o botão de excluir */
+}
+
+.music-list-collapsible .delete-button:hover {
+  background-color: #a02c20;
+}
+
+/* Scrollbar customizada mais elegante */
+.music-list-collapsible::-webkit-scrollbar {
+  width: 10px; /* Largura da scrollbar */
+}
+
+.music-list-collapsible::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2); /* Fundo transparente */
+  border-radius: 5px;
+}
+
+.music-list-collapsible::-webkit-scrollbar-thumb {
+  background-color: #8e44ad; /* Cor do "thumb" da scrollbar */
+  border-radius: 5px;
+  border: 2px solid rgba(10, 0, 30, 0.95); /* Borda com a cor do fundo do container */
+}
+
+.music-list-collapsible::-webkit-scrollbar-thumb:hover {
+  background-color: #9b59b6; /* Cor no hover */
+}
+
+/* Foco no cabeçalho para acessibilidade */
+.collapsible-header:focus {
+  outline: 3px solid #b07de1; /* Contorno de foco brilhante */
+  outline-offset: 4px; /* Afasta o contorno da borda */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .genre-collapsible {
+      width: 280px; /* Ligeiramente menor em tablets */
+      right: 1rem;
+      bottom: 1rem;
+  }
+
+  .collapsible-header {
+      font-size: 1.1rem;
+      padding: 0.8rem 1rem;
+  }
+
+  .collapsible-header .icon {
+      font-size: 1.4rem;
+  }
+
+  .collapsible-header .count {
+      font-size: 0.9rem;
+  }
+
+  .music-list-collapsible .music-item {
+      padding: 0.6rem 0.8rem;
+  }
+
+  .music-list-collapsible .music-cover {
+      width: 40px;
+      height: 40px;
+  }
+
+  .music-list-collapsible .music-info h3 {
+      font-size: 0.9rem;
+  }
+
+  .music-list-collapsible .music-info p {
+      font-size: 0.75rem;
+  }
+
+  .music-list-collapsible .play-button,
+  .music-list-collapsible .delete-button {
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .genre-collapsible {
+      width: calc(100vw - 2rem); /* Ocupa quase toda a largura em celulares */
+      right: 1rem;
+      left: 1rem;
+      bottom: 1rem;
+      border-radius: 1rem; /* Menos arredondado para telas menores */
+  }
+
+  .collapsible-header {
+      font-size: 1rem;
+      padding: 0.7rem 0.8rem;
+  }
+  .collapsible-header .icon {
+      font-size: 1.2rem;
+  }
+
+  .collapsible-header .count {
+      font-size: 0.85rem;
+  }
+
+  .music-list-collapsible {
+      padding: 0.75rem;
+  }
+
+  .music-list-collapsible .music-item {
+      flex-direction: row; /* Mantém em linha, mas pode ser necessário testar para ver como se comporta */
+      align-items: center;
+      gap: 0.5rem;
+  }
+}

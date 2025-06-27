@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Músicas - Jukebox Music Player</title>
+    <link rel="stylesheet" href="../css/music.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Botão de Voltar ao Menu -->
+    <div class="back-button-container">
+        <a href="./player.html" class="back-button" aria-label="Voltar ao menu principal">
+            <i class="bi bi-arrow-left-circle"></i>
+            <span class="visually-hidden">Voltar ao Menu</span>
+        </a>
+    </div>
+
+    <!-- Container colapsável lateral para músicas carregadas -->
+    <details class="genre-collapsible" aria-label="Músicas Carregadas" open>
+        <summary class="collapsible-header" role="button" aria-expanded="true" aria-controls="loaded-music-list">
+            <i class="bi bi-music-note-list icon" aria-hidden="true"></i>
+            Músicas Carregadas
+            <span class="count" id="loaded-music-count">(0)</span>
+        </summary>
+        <div id="loaded-music-list" class="music-list-collapsible" role="region" aria-live="polite" aria-relevant="additions removals">
+            <!-- Aqui serão inseridas as músicas carregadas dinamicamente -->
+        </div>
+    </details>
+
+    <!-- Conteúdo principal da página de músicas -->
+    <main>
+        <h1>Músicas Disponíveis</h1>
+        <div id="music-list">
+            <!-- As músicas serão listadas aqui dinamicamente -->
+        </div>
+    </main>
+
+    <script src="../javaScript/music.js"></script>
+</body>
+</html>

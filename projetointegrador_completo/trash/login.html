@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecte-se - Jukebox Music</title>
+    <link rel="stylesheet" href="../css/style_login.css">
+
+</head>
+<body>
+ 
+
+    <main>
+        <div class="login-container">
+            <h1>Conecte-se</h1>
+            <form>
+                <div class="form-group">
+                    <label for="username">Usuário ou E-mail</label>
+                    <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                </div>
+                <button type="button" class="button" onclick="login()">Conecte-se</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                alert(`Bem-vindo ao Jukebox Music`);
+                // Aqui você pode redirecionar para outra página, como: window.location.href = 'dashboard.html';
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        }
+    </script>
+</body>
+</html>
